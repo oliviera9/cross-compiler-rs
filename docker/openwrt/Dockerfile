@@ -28,7 +28,11 @@ RUN apt-get update && \
   curl \
   pkg-config \
   wget \
-  xz-utils
+  xz-utils \
+  clang \
+  libclang-dev \
+  gcc-multilib \
+  python3
 
 # Setup directory structure
 RUN mkdir -p /root/.cargo /root/Projects /usr/local/openwrt/
