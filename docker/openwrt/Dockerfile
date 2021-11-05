@@ -48,6 +48,7 @@ WORKDIR /tmp/
 RUN xz -d lede-sdk-$OPENWRT_VERSION-ramips-mt7620_gcc-$GCC_VERSION.Linux-x86_64.tar.xz
 RUN tar xf lede-sdk-$OPENWRT_VERSION-ramips-mt7620_gcc-$GCC_VERSION.Linux-x86_64.tar
 RUN cp -R /tmp/lede-sdk-$OPENWRT_VERSION-ramips-mt7620_gcc-$GCC_VERSION.Linux-x86_64/staging_dir/* /usr/local/openwrt/
+RUN cd /usr/local/openwrt/toolchain-mipsel_24kc_gcc-5.4.0_musl-1.1.16/bin && ln -s mipsel-openwrt-linux-g++ mipsel-linux-musl-g++
 
 # Add compiler to PATH
 ENV STAGING_DIR="/usr/local/openwrt/"
